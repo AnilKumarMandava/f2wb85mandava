@@ -5,8 +5,13 @@ block content
   p Welcome to #{title}
    - var results = event;
   div(class="container-fluid")
-    each value in results 
-      div(class="row")
+    each value,index in results 
+      div(class="row" ,onclick=`buy(${index})`)
         div(class="col-sm-2") #{value.event_Name}
         div(class="col-sm-2") #{value.event_id}
         div(class="col-sm-2") #{value.event_type}
+
+  script. 
+        function buy(cost){
+          alert('You purchased value ' + cost)
+        }
